@@ -1,7 +1,7 @@
 
 package ejercicios;
 
-import static ejercicios.SetDeTenis.evaluar;
+
 import java.util.Scanner;
 
 /**
@@ -10,8 +10,15 @@ import java.util.Scanner;
  */
 public class AnnosBisiestos {
     public static String evaluar(int anno){
-        // TODO: Coloca aquí el código del ejercicio 2: Años bisiestos
-        return "";
+        if (anno < 1582) { // Antes del calendario gregoriano
+            return anno + " no es bisiesto (calendario juliano o anterior)";
+        } else if (anno % 400 == 0 || (anno % 4 == 0 && anno % 100 != 0)) {
+            return anno + " es bisiesto";
+        } else {
+            return anno + " no es bisiesto";
+        }
+      
+        
     }
     
     public static void main(String[] args) {
@@ -21,6 +28,7 @@ public class AnnosBisiestos {
         
         String respuesta = evaluar(anno);
         System.out.println(respuesta);
+        lector.close();
     }
             
 }

@@ -1,7 +1,8 @@
-
 package ejercicios;
 
-import static ejercicios.SetDeTenis.evaluar;
+
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -10,8 +11,17 @@ import java.util.Scanner;
  */
 public class Ordenamiento {
     public static String evaluar(int numero1, int numero2, int numero3, int numero4) {
-        // TODO: Coloca aquí el código del ejercicio 5: Ordenamiento
-        return "";
+        int [] numeros = {numero1,numero2,numero3,numero4};
+        Arrays.sort(numeros);
+        StringBuilder resultado = new StringBuilder();
+        for (int i = 0; i < numeros.length; i++) {
+            resultado.append(numeros[i]);
+            if (i < numeros.length - 1) {
+                resultado.append(" ");  // Añadir un espacio entre los números
+            }
+        }
+        
+        return resultado.toString();
     }
     
     public static void main(String[] args) {
@@ -27,5 +37,6 @@ public class Ordenamiento {
         
         String respuesta = evaluar(numero1, numero2, numero3, numero4);
         System.out.println(respuesta);
+        lector.close();
     }
 }

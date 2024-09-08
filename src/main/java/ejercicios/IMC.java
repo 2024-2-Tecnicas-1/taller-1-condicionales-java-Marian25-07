@@ -1,7 +1,6 @@
-
 package ejercicios;
 
-import static ejercicios.SetDeTenis.evaluar;
+
 import java.util.Scanner;
 
 /**
@@ -10,8 +9,21 @@ import java.util.Scanner;
  */
 public class IMC {
     public static String evaluar(int peso, double estatura, int edad) {
-        // TODO: Coloca aquí el código del ejercicio 8: Índice de masa corporal
-        return "";
+        double IMC = peso /(estatura * estatura);
+        if (edad < 45 && IMC < 22.0){
+           return"bajo";
+        }
+        if ( edad < 45 && IMC >= 22.0){
+            return "medio";
+        }
+        if (edad >= 45 && IMC < 22.0){
+            return"medio";
+        }
+        else if (edad >= 45 && IMC >= 22.0 ) {
+            return"alto";        }
+            return "";
+
+        
     }
     
     public static void main(String[] args) {
@@ -25,5 +37,6 @@ public class IMC {
         
         String respuesta = evaluar(peso, estatura, edad);
         System.out.println(respuesta);
+        lector.close();
     }
 }
